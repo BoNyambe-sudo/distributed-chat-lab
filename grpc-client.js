@@ -3,7 +3,7 @@ import protoLoader from "@grpc/proto-loader";
 import readline from "readline";
 
 const pkgDef = protoLoader.loadSync("chat.proto", {});
-const chatProto = grpc.loadPackageDefintion(pkgDef).chat;
+const chatProto = grpc.loadPackageDefinition(pkgDef).chat;
 const client = new chatProto.ChatService(
   "localhost:50051",
   grpc.credentials.createInsecure(),
